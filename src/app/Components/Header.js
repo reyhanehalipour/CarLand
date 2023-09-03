@@ -8,8 +8,11 @@ import SerachMobail from "./SerachMobail"
 import { useMediaQuery } from "react-responsive"
 import { Link } from "react-scroll"
 import{BiX,BiMenuAltRight} from 'react-icons/bi'
+import { SearchContext } from "../Context/Search"
 
 export default function Header() {
+
+  const {SetSaerchActive}= useContext(SearchContext)
 
   const [Header, SetHaeder] = useState(false)
   const [Nav, SetNav]= useState(false)
@@ -27,6 +30,12 @@ useEffect(()=>{
       SetHaeder(true)
     }else{
       SetHaeder(false)
+    }
+
+    if(window.scroll >800){
+      SetSaerchActive(true)
+    }else{
+      SetSaerchActive(false)
     }
   }
 
@@ -51,7 +60,7 @@ useEffect(()=>{
     <div className="xl:container mx-auto flex flex-col xl:flex-row 
      xl:items-center xl:justify-between"> 
 
-    <div className="flex justity-between items-center px-4">
+    <div className="flex justify-between items-center px-4">
       <Link 
       to="home"
       smooth={DesktopMode}
@@ -69,10 +78,17 @@ useEffect(()=>{
 
       </div>
 
+      
+
     
     </div>
 
    
+    
+   
+
+    <div>
+
     <nav className={`${ Nav? 'max-h-max py-8 px-4 xl:px-0 xl:py-0 flex flex-col':'max-h-0 xl:max-h-max '}
         flex flex-col w-full bg-white gap-y-6 overflow-hidden font-bold
           xl:font-medium xl:flex-row  xl:w-max xl:gap-x-8 xl:h-max xl:bg-transparent 
@@ -146,9 +162,6 @@ useEffect(()=>{
 
       <SerachMobail/>
         </nav>
-   
-
-    <div>
     </div>
        </div>
    </header>
