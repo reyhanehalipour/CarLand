@@ -2,6 +2,7 @@ import React from 'react'
 
 export default function Cars() {
   return (
-    <div>Cars</div>
+
+    <section className=' h-screen flex items-center bg-yellow-200' id='cars'>cars</section>
   )
 }

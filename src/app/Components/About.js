@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function About() {
   return (
-    <div>About</div>
+    <section className=' section flex items-center bg-pink-200' id='about'></section>
   )
 }

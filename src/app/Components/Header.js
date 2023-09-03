@@ -134,7 +134,7 @@ useEffect(()=>{
 
       <Link 
         className='cursor-pointer'
-               to="home"
+               to="Testimonial"
                activeClass="active"
               smooth={DesktopMode}
               spy={true}
